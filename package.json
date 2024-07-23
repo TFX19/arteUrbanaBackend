@@ -2,17 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "src/App.js",
   "scripts": {
-    "verify": "node -e 'require(\"dotenv\"); console.log(\"dotenv is installed\");'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/App.js",
     "start": "node src/App.js",
     "build": "echo \"No build step defined\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -22,5 +18,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }
