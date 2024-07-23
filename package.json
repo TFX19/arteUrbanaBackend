@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/App.js",
-     "build": "echo \"No build step defined\"",
-    "start": "node src/App.js"
+    "start": "node src/App.js", 
+    "build": "echo \"No build step defined\""
   },
   "keywords": [],
   "author": "",
@@ -21,3 +21,4 @@
     "sequelize": "^6.31.0"
   }
 }
+
