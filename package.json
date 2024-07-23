@@ -4,6 +4,7 @@
   "description": "",
   "main": "App.js",
   "scripts": {
+    "verify": "node -e 'require(\"dotenv\"); console.log(\"dotenv is installed\");'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/App.js",
     "start": "node src/App.js",
