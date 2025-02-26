@@ -6,7 +6,7 @@ const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 const sequelize = new Sequelize(DB_CONNECTION_STRING, {
   dialect: 'postgres',
   dialectOptions: {
-    ssl: process.env.NODE_ENV === 'production' ? { require: true, rejectUnauthorized: false } : false,
+    ssl: false,
   }
   // dialectOptions: {
   //   ssl: {
