@@ -6,14 +6,11 @@ const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 const sequelize = new Sequelize(DB_CONNECTION_STRING, {
   dialect: 'postgres',
   dialectOptions: {
-    ssl: false,
-  }
-  // dialectOptions: {
-  //   ssl: {
-  //     require: true,
-  //     rejectUnauthorized: false, // Permite certificado autoassinado
-  //   },
-  // },
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Permite certificado autoassinado
+    },
+  },
 });
 
 sequelize
