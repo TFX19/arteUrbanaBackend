@@ -1,25 +1,21 @@
 require('dotenv').config();
-const Sequelize = require('sequelize');
 
-const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(DB_CONNECTION_STRING, {
-  dialect: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false, // Permite certificado autoassinado
+const databaseUrl = process.env.DATABASECONNECTIONSTRING;
+
+if (!databaseUrl) {
+    throw new Error("DATABASECONNECTIONSTRING is not defined!");
+}
+
+const sequelize = new Sequelize(databaseUrl, {
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false, 
+        },
     },
-  },
 });
-
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('✅ Conexão com o banco de dados estabelecida com sucesso.');
-  })
-  .catch((err) => {
-    console.error('❌ Não foi possível conectar ao banco de dados:', err);
-  });
 
 module.exports = sequelize;
