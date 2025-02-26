@@ -1,14 +1,25 @@
+require('dotenv').config();
 const Sequelize = require('sequelize');
 
-const DB_CONNECTION_STRING = 'postgres://nrkhqqkm:XIebNuS93r3_2P0WgIjntRKC2yIX5bjj@kandula.db.elephantsql.com/nrkhqqkm';
-const sequelize = new Sequelize(DB_CONNECTION_STRING, { dialect: 'postgres' });
+const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 
-sequelize.authenticate()
+const sequelize = new Sequelize(DB_CONNECTION_STRING, {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Permite certificado autoassinado
+    },
+  },
+});
+
+sequelize
+  .authenticate()
   .then(() => {
-    console.log('Conexão com o banco de dados estabelecida com sucesso.');
+    console.log('✅ Conexão com o banco de dados estabelecida com sucesso.');
   })
   .catch((err) => {
-    console.error('Não foi possível conectar ao banco de dados:', err);
+    console.error('❌ Não foi possível conectar ao banco de dados:', err);
   });
 
 module.exports = sequelize;
