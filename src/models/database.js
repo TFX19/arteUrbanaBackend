@@ -5,12 +5,12 @@ const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 
 const sequelize = new Sequelize(DB_CONNECTION_STRING, {
   dialect: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false, // Permite certificado autoassinado
-    },
-  },
+  // dialectOptions: {
+  //   ssl: {
+  //     require: true,
+  //     rejectUnauthorized: false, // Permite certificado autoassinado
+  //   },
+  // },
 });
 
 sequelize
