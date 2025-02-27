@@ -59,24 +59,6 @@ The API has several routes organized by resource:
 
 ---
 
-## ⚡ How to Contribute
-1. Fork this repository.
-2. Create a new branch:
-   ```sh
-   git checkout -b my-feature
-   ```
-3. Make your changes and commit:
-   ```sh
-   git commit -m "Add new feature"
-   ```
-4. Push to the remote repository:
-   ```sh
-   git push origin my-feature
-   ```
-5. Open a Pull Request.
-
----
-
 ## 📜 License
 This project is under the ISC license.
 
